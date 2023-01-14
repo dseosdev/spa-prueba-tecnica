@@ -23,14 +23,15 @@ class CreateBookingController extends AbstractController
         Request $request
     ): JsonResponse
     {
+        
         $data = json_decode($request->getContent(), false);
+        
         $booking = $this->createBooking->__invoke($data);
-
+        
         if ($booking["error"] !== false){
             return new JsonResponse(['Error'=>$booking["error"]], Response::HTTP_BAD_REQUEST );
         }
-        
-        return new JsonResponse((array)$booking["entity"], Response::HTTP_OK);
+        return new JsonResponse(["Message" => "Booking Created Successfully"], Response::HTTP_OK);
     }
 
   }

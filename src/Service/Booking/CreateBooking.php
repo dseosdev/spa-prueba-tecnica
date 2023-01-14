@@ -27,6 +27,10 @@ class CreateBooking
         $response = [];
         $response["error"] = false;
         $spaService = $this->spaServiceRepository->find($data->spa_service);
+        if (!$spaService){
+            $response["error"]="SPA Service not available";
+            return $response;
+        }
         $bookingData=[
             'customerName' => $data->customer_name,
             'customerEmail' => $data->customer_email,
@@ -53,6 +57,7 @@ class CreateBooking
                 $response["entity"] = $bookingEntity;
             }
             else{
+
                 $response["error"] = $validateResponse;
             }
 

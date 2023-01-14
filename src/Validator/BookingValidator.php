@@ -23,12 +23,10 @@ class BookingValidator
         $errors = $this->validator->validate($booking);
         
         if (count($errors) > 0) {
-            /*
-             * Uses a __toString method on the $errors variable which is a
-             * ConstraintViolationList object. This gives us a nice string
-             * for debugging.
-             */
-            $errorsString = (string) $errors;
+            $errorsString = "";
+            foreach ($errors as $error){
+                $errorsString.= $error->getPropertyPath().":".$error->getMessage()." ";
+            }
 
             return $errorsString;
     
