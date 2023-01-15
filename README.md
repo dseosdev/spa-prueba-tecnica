@@ -5,48 +5,48 @@
 ### Clonar el proyecto
 1. Clonar el proyecto: 
 
-``` bash
-`git clone git@github.com:dseosdev/spa-prueba-tecnica.git`
+``` console
+git clone git@github.com:dseosdev/spa-prueba-tecnica.git
 ```
 2. Entrar en el directorio: 
 
-``` bash
-`cd spa-prueba-tecnica`
+``` console
+cd spa-prueba-tecnica
 ```
 
 
 ### Levantar los contenedores de docker
 
-``` bash
+``` console
 docker-compose up --build
 ```
 
 ### Entrar en el contenedor de php
-``` bash
+``` console
 docker exec -ti php-spa bash
 ```
 
 ### Instalación de dependencias
 
-``` bash
+``` console
 composer update
 ```
 
 ### Lanzar migraciones
 
-``` bash
+``` console
 php bin/console doctrine:migrations:migrate
 ```
 
 ### Cargar datos de prueba
 
-``` bash
+``` console
 php bin/console doctrine:fixtures:load
 ```
 
 ### Crear base de datos de testing
 
-``` bash
+``` console
 php bin/console --env=test doctrine:database:create
 ```
 
@@ -56,7 +56,7 @@ En cada prueba se regenera la DB y se cargan los datos de prueba
 
 ### Lanzar batería de tests
 
-``` bash
+``` console
 vendor/bin/phpunit
 ```
 
