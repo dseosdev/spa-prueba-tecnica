@@ -66,11 +66,10 @@ php bin/console --env=test doctrine:database:create
 
 En cada prueba se regenera la DB y se cargan los datos de prueba
 
-### Lanzar baterías de tests
+### Lanzar batería de tests
 ``` code
 
 vendor/bin/phpunit
-
 
 ```
 
@@ -82,52 +81,59 @@ vendor/bin/phpunit
 
 
 
-## API
 
-### Listado de servicios
+# API
 
-## Méthod
+## Listado de servicios
+
+### Méthod
 GET
 
-## URL
+### EndPoint
 /api/v1/spa-services/{locale}
-
 
 ### Ejemplos
 http://0.0.0.0:8060/api/v1/spa-services
+
 http://0.0.0.0:8060/api/v1/spa-services/en
+
 http://0.0.0.0:8060/api/v1/spa-services/de
+
 http://0.0.0.0:8060/api/v1/spa-services&fr
 
 
-### Disponibilidad de servicios
 
-## Méthod
+## Disponibilidad de servicios
+
+### Méthod
 GET
 
-## URL
+### EndPoint
 /api/v1/spa-service-availability/{ID Servicio Spa}/{fecha}
 
 ### Ejemplos
 http://0.0.0.0:8060/api/v1/spa-service-availability/1/2023-01-01
+
 http://0.0.0.0:8060/api/v1/spa-service-availability/2/2023-01-01
+
 http://0.0.0.0:8060/api/v1/spa-service-availability/3/2023-01-01
 
 http://0.0.0.0:8060/api/v1/spa-service-availability/1/2023-01-02
+
 http://0.0.0.0:8060/api/v1/spa-service-availability/2/2023-01-02
+
 http://0.0.0.0:8060/api/v1/spa-service-availability/3/2023-01-02
 
 
-### Crear una reserva
+## Crear una reserva
 
-## Méthod
+### Méthod
 POST
 
-## URL
+### EndPoint
 /api/v1/create-booking
 
-
-## Estructura Json (Enviado en Body > Raw > Json)
+### Estructura Json (Enviado en Body > Raw > Json)
 {
     "customer_name": "{Nombre del cliente}",
     "customer_email": "{Email del cliente}",
@@ -135,7 +141,6 @@ POST
     "hour": "{Hora del servicio reservado}",
     "spa_service": "{ID del servicio reservado}"
 }
-
 
 ### Ejemplo
 {
