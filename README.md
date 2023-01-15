@@ -21,7 +21,7 @@
 ### Levantar los contenedores de docker
 ``` code
 
-docker-composer up --build
+docker-compose up --build
 
 ```
 
