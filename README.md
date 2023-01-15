@@ -5,61 +5,49 @@
 ### Clonar el proyecto
 1. Clonar el proyecto: 
 
-``` code
-
+``` bash
 `git clone git@github.com:dseosdev/spa-prueba-tecnica.git`
-
 ```
 2. Entrar en el directorio: 
-``` code
 
+``` bash
 `cd spa-prueba-tecnica`
-
 ```
 
 
 ### Levantar los contenedores de docker
-``` code
 
+``` bash
 docker-compose up --build
-
 ```
 
 ### Entrar en el contenedor de php
-``` code
-
+``` bash
 docker exec -ti php-spa bash
-
 ```
 
 ### Instalación de dependencias
-``` code
 
+``` bash
 composer update
-
 ```
 
 ### Lanzar migraciones
-``` code
 
+``` bash
 php bin/console doctrine:migrations:migrate
-
 ```
 
 ### Cargar datos de prueba
-``` code
 
+``` bash
 php bin/console doctrine:fixtures:load
-
-
 ```
 
 ### Crear base de datos de testing
-``` code
 
+``` bash
 php bin/console --env=test doctrine:database:create
-
-
 ```
 
 ## Testing
@@ -67,10 +55,9 @@ php bin/console --env=test doctrine:database:create
 En cada prueba se regenera la DB y se cargan los datos de prueba
 
 ### Lanzar batería de tests
-``` code
 
+``` bash
 vendor/bin/phpunit
-
 ```
 
 ### Cobertura de tests
@@ -134,6 +121,7 @@ POST
 /api/v1/create-booking
 
 ### Estructura Json (Enviado en Body > Raw > Json)
+``` json
 {
     "customer_name": "{Nombre del cliente}",
     "customer_email": "{Email del cliente}",
@@ -141,11 +129,13 @@ POST
     "hour": "{Hora del servicio reservado}",
     "spa_service": "{ID del servicio reservado}"
 }
+```
 
 ### Ejemplo
 http://0.0.0.0:8060/api/v1/create-booking
 
 #### Body
+``` json
 {
     "customer_name": "Juan Gonzalez",
     "customer_email": "juan.gonzalez@demo.com",
@@ -153,6 +143,7 @@ http://0.0.0.0:8060/api/v1/create-booking
     "hour": "14:00",
     "spa_service": "1"
 }
+```
 
 
 
