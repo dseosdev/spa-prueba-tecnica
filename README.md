@@ -76,7 +76,7 @@ vendor/bin/phpunit
 ### Cobertura de tests
 1. Test funcionales de todos los casos de uso
 2. Test para respuestas correctas y tests para respuestas con errores (Por ejemplo email no valido, nombre de cliente vacío o servicio no disponible...)
-3. En todos los tests se comprueba que se devuelve un JSON, con datos de respuesta exactos esperados y un HTTP Header (200 Successs, 400 Bad Request)
+3. En todos los tests se comprueba que se devuelve un JSON, con datos de respuesta exactos esperados y un HTTP Header (200 Success, 400 Bad Request)
 4. Todos los tests extienden de un TestBase
 
 
@@ -143,6 +143,9 @@ POST
 }
 
 ### Ejemplo
+http://0.0.0.0:8060/api/v1/create-booking
+
+#### Body
 {
     "customer_name": "Juan Gonzalez",
     "customer_email": "juan.gonzalez@demo.com",
