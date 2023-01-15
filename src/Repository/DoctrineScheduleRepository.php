@@ -7,6 +7,7 @@ use App\Entity\Schedule;
 use App\Entity\SpaService;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Repository\ScheduleRepositoryInterface;
 
 /**
  * @extends ServiceEntityRepository<Schedule>
@@ -16,7 +17,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
  * @method Schedule[]    findAll()
  * @method Schedule[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ScheduleRepository extends ServiceEntityRepository
+class DoctrineScheduleRepository extends ServiceEntityRepository implements ScheduleRepositoryInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
@@ -53,29 +54,4 @@ class ScheduleRepository extends ServiceEntityRepository
        ;
     }
 
-
-//    /**
-//     * @return Schedule[] Returns an array of Schedule objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('s')
-//            ->andWhere('s.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('s.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?Schedule
-//    {
-//        return $this->createQueryBuilder('s')
-//            ->andWhere('s.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
 }

@@ -7,6 +7,7 @@ use App\Entity\SpaService;
 use Doctrine\Persistence\ManagerRegistry;
 use Gedmo\Translatable\TranslatableListener;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Repository\SpaServiceRepositoryInterface;
 
 /**
  * @extends ServiceEntityRepository<SpaService>
@@ -16,7 +17,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
  * @method SpaService[]    findAll()
  * @method SpaService[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class SpaServiceRepository extends ServiceEntityRepository
+class DoctrineSpaServiceRepository extends ServiceEntityRepository implements SpaServiceRepositoryInterface
 {
     public function __construct(ManagerRegistry $registry)
     {

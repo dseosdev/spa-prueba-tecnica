@@ -7,6 +7,7 @@ use App\Entity\SpaService;
 use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use App\Repository\BookingRepositoryInterface;
 
 /**
  * @extends ServiceEntityRepository<Booking>
@@ -16,7 +17,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Booking[]    findAll()
  * @method Booking[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class BookingRepository extends ServiceEntityRepository
+class DoctrineBookingRepository extends ServiceEntityRepository implements BookingRepositoryInterface
 {
     public function __construct(ManagerRegistry $registry)
     {

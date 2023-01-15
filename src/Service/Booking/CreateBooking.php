@@ -6,16 +6,16 @@ use DateTime;
 use stdClass;
 use App\Entity\Booking;
 
-use App\Repository\BookingRepository;
-use App\Repository\SpaServiceRepository;
+use App\Repository\BookingRepositoryInterface;
+use App\Repository\SpaServiceRepositoryInterface;
 use App\Service\SpaServices\CheckSpaServiceAvailability;
 use App\Validator\BookingValidator;
 
 class CreateBooking
 {
     public function __construct (
-        private BookingRepository $bookingRepository, 
-        private SpaServiceRepository $spaServiceRepository,
+        private BookingRepositoryInterface $bookingRepository, 
+        private SpaServiceRepositoryInterface $spaServiceRepository,
         private CheckSpaServiceAvailability $checkSpaServiceAvailability,
         private BookingValidator $bookingValidator
         ){

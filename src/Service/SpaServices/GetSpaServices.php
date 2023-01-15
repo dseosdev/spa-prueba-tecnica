@@ -2,13 +2,13 @@
 
 namespace App\Service\SpaServices;
 
-use App\Repository\SpaServiceRepository;
+use App\Repository\SpaServiceRepositoryInterface;
 
 
 
 class GetSpaServices
 {
-    public function __construct (private SpaServiceRepository $spaServiceRepository){
+    public function __construct (private SpaServiceRepositoryInterface $spaServiceRepository){
 
     }
     public function __invoke(

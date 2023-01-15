@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\ScheduleRepository;
+use App\Repository\ScheduleRepositoryInterface;
+use App\Repository\DoctrineScheduleRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ScheduleRepository::class)]
+#[ORM\Entity(repositoryClass: DoctrineScheduleRepository::class)]
 class Schedule
 {
     #[ORM\Id]

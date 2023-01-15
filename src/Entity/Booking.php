@@ -5,13 +5,14 @@ namespace App\Entity;
 use Assert\Choice;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use App\Repository\BookingRepository;
+use App\Repository\BookingRepositoryInterface;
+use App\Repository\DoctrineBookingRepository;
 use PharIo\Manifest\Email;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use Symfony\Component\Validator\Constraints as Assert;
 
 
-#[ORM\Entity(repositoryClass: BookingRepository::class)]
+#[ORM\Entity(repositoryClass: DoctrineBookingRepository::class)]
 class Booking
 {
     #[ORM\Id]

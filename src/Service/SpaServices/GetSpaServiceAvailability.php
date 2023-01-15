@@ -7,9 +7,9 @@ use DateInterval;
 use App\Entity\Booking;
 use App\Entity\Schedule;
 use App\Entity\SpaService;
-use App\Repository\BookingRepository;
-use App\Repository\ScheduleRepository;
-use App\Repository\SpaServiceRepository;
+use App\Repository\BookingRepositoryInterface;
+use App\Repository\ScheduleRepositoryInterface;
+use App\Repository\SpaServiceRepositoryInterface;
 use App\Service\Schedule\GetHoursInInterval;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -18,9 +18,9 @@ use Symfony\Component\HttpFoundation\Request;
 class GetSpaServiceAvailability
 {
     public function __construct (
-        private BookingRepository $bookingRepository, 
-        private SpaServiceRepository $spaServiceRepository, 
-        private ScheduleRepository $scheduleRepository,
+        private BookingRepositoryInterface $bookingRepository, 
+        private SpaServiceRepositoryInterface $spaServiceRepository, 
+        private ScheduleRepositoryInterface $scheduleRepository,
         private GetHoursInInterval $getHoursInInterval)
         {
 
