@@ -73,7 +73,7 @@ vendor/bin/phpunit
 
 ## Listado de servicios
 
-### Méthod
+### Method
 GET
 
 ### EndPoint
@@ -92,7 +92,7 @@ http://0.0.0.0:8060/api/v1/spa-services&fr
 
 ## Disponibilidad de servicios
 
-### Méthod
+### Method
 GET
 
 ### EndPoint
@@ -114,7 +114,7 @@ http://0.0.0.0:8060/api/v1/spa-service-availability/3/2023-01-02
 
 ## Crear una reserva
 
-### Méthod
+### Method
 POST
 
 ### EndPoint
